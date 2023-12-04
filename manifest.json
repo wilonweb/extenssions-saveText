@@ -1,0 +1,21 @@
+// manifest.json
+{
+  "manifest_version": 2,
+  "name": "Text Saver",
+  "version": "1.0",
+  "description": "Saves selected text to a document",
+  "permissions": ["storage", "contextMenus"],
+  "icons": {
+    "48": "icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
